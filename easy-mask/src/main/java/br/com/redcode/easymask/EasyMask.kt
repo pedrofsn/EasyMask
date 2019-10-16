@@ -16,9 +16,9 @@ fun EditText.handleCPFandCNPJ(): CPFCNPJTextWatcher {
     return watcher
 }
 
-fun EditText.handleCPF(): MascaraNumericaTextWatcher? {
+fun EditText.handleCPF(mask: String = "###.###.###-##"): MascaraNumericaTextWatcher? {
     val watcher = MascaraNumericaTextWatcher.Builder()
-        .paraMascara("###.###.###-##")
+        .paraMascara(mask)
         .comValidador(Validador.CPF)
         .build()
 
@@ -27,9 +27,9 @@ fun EditText.handleCPF(): MascaraNumericaTextWatcher? {
     return watcher
 }
 
-fun EditText.handleCNPJ(): MascaraNumericaTextWatcher? {
+fun EditText.handleCNPJ(mask: String = "##.###.###/####-##"): MascaraNumericaTextWatcher? {
     val watcher = MascaraNumericaTextWatcher.Builder()
-        .paraMascara("##.###.###/####-##")
+        .paraMascara(mask)
         .comValidador(Validador.CNPJ)
         .build()
 
@@ -51,9 +51,9 @@ fun EditText.handleMoney(hasSymbol: Boolean = true): ValorMonetarioWatcher? {
     return watcher
 }
 
-fun EditText.handlePhone(): MascaraNumericaTextWatcher? {
+fun EditText.handlePhone(mask: String = "(##) # ####-####"): MascaraNumericaTextWatcher? {
     val watcher = MascaraNumericaTextWatcher.Builder()
-        .paraMascara("(##) # ####-####")
+        .paraMascara(mask)
         .comValidador(Validador.TELEFONE)
         .build()
 
@@ -72,6 +72,6 @@ fun EditText.addNumericMask(mask: String): MascaraNumericaTextWatcher? {
     return watcher
 }
 
-fun EditText.handleExpirationDate() = addNumericMask("##/##")
-fun EditText.handleDate() = addNumericMask("##/##/####")
-fun EditText.handleCEP() = addNumericMask("#####-###")
+fun EditText.handleExpirationDate(mask: String = "##/##") = addNumericMask(mask)
+fun EditText.handleDate(mask: String = "##/##/####") = addNumericMask(mask)
+fun EditText.handleCEP(mask: String = "#####-###") = addNumericMask(mask)
