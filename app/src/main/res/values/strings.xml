@@ -4,6 +4,7 @@
     <string name="cnpj">CNPJ</string>
     <string name="cpf_cnpj">CPF/CNPJ</string>
     <string name="phone">Phone</string>
+    <string name="phone_custom_mask">Phone (custom mask)</string>
     <string name="cep">CEP</string>
     <string name="expiration_date">Expiration Date</string>
     <string name="date">Date</string>

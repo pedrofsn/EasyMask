@@ -1,7 +1,7 @@
 package br.com.redcode.easymask.sample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import br.com.redcode.easymask.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         editTextExpirationDate.handleExpirationDate()
         editTextCep.handleCEP()
         editTextPhone.handlePhone()
+        editTextPhone1.handlePhone(mask = "(##) #####-####")
         editTextMoney.handleMoney()
         editTextCpfCnpj.handleCPFandCNPJ()
         editTextCpf.handleCPF()
