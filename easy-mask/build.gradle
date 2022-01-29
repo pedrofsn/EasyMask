@@ -1,8 +1,7 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-
-apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.pedrofsn'
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
 
 android {
     compileSdkVersion 29
@@ -20,10 +19,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    api 'br.com.concrete:canarinho:2.0.1'
+    api 'com.github.concretesolutions:canarinho:2.0.2'
 }
